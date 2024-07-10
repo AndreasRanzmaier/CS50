@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function addTextElement(text, place)
+            {
+                const newH3 = document.createElement("h2");
+                const Text = document.createTextNode(text);
+                newH3.appendChild(Text);
+
+                // add the newly created element and its content into the DOM
+                 const insertPlace = document.getElementById(place);
+                 insertPlace.appendChild(newH3)
+            }
+
+            function checkMCAwnser(event)
+            {
+                var triggerObject = event.srcElement;
+                if(triggerObject.innerHTML == "Berlin")
+                {
+                    triggerObject.style.backgroundColor = 'green';
+                    addTextElement("Correct!", "question1");
+                }
+                else
+                {
+                    triggerObject.style.backgroundColor = 'red';
+                    addTextElement("Incorrect", "question1");
+                }
+            }
+
+            function checkFreeAwnser()
+            {
+                const input = document.getElementById("input");
+                if (input.value == "It is what it is!")
+                {
+                    input.style.backgroundColor = 'green';
+                    addTextElement("Correct!", "question2");
+                }
+                else
+                {
+                    input.style.backgroundColor = 'red';
+                    addTextElement("Incorrect", "question2");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2 >Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <div id="question1">
+                    <h3>What is the capital city of Germany?</h3>
+                </div>
+                <button onclick="checkMCAwnser(event)">Bern</button>
+                <button onclick="checkMCAwnser(event)">Berlin</button>
+                <button onclick="checkMCAwnser(event)">Bratislava</button>
+                <button onclick="checkMCAwnser(event)">Munich</button>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <div id="question2">
+                    <h3>What do you think of the current political and economical situation?</h3>
+                </div>
+                <!-- TODO: Add free response question here -->
+                <input id="input" type="text" name="fname">
+                <button onclick="checkFreeAwnser()">Check Awnser</button>
+            </div>
+        </div>
+    </body>
+</html>

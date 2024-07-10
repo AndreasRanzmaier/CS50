@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?:   Omega(n) means Bubble sort should be fastest when the array is sorted which it is, slightly vs merge sort but considerably vs selection.
+
+sort2 uses: Merge Sort
+
+How do you know?: It is by far the fastes when given a big and random dataset.
+
+sort3 uses: Selection Sort
+
+How do you know?: Slower when sorted as it can't be optimized to just run through the list once Omega(n^2).
